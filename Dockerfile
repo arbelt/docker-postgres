@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:0.9.22
 ENV PG_MAJOR 10
 ENV POSTGIS_MAJOR 2.4
 ENV PG_VERSION 10.0-1.pgdg16.04+1
