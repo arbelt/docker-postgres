@@ -28,3 +28,5 @@ RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PG
 COPY docker-entrypoint.sh /usr/local/bin
 ENTRYPOINT ["/sbin/my_init", "--", "docker-entrypoint.sh"]
 CMD ["postgres"]
+COPY ./scripts/install_dehydrated.sh /tmp/install_dehydrated.sh
+RUN /tmp/install_dehydrated.sh && rm -rf tmp/*
